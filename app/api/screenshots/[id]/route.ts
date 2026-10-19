@@ -1,0 +1,2 @@
+import {currentUser} from '@/lib/auth';import {owned} from '@/lib/db';
+export async function GET(_:Request,{params}:{params:{id:string}}){const u=currentUser();if(!u)return new Response('Unauthorized',{status:401});const image=await owned(u.sub,async c=>(await c.query('select content_type,image_data from screenshot_objects where project_id=$1',[params.id])).rows[0]);if(!image)return new Response('Not found',{status:404});return new Response(image.image_data,{headers:{'content-type':image.content_type,'cache-control':'private, max-age=300','content-disposition':'inline'}})}

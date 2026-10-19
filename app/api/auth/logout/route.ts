@@ -1,0 +1,1 @@
+import {NextResponse} from 'next/server';import {COOKIE} from '@/lib/auth';export async function POST(req:Request){const r=NextResponse.redirect(new URL('/',req.url));r.cookies.set(COOKIE,'',{httpOnly:true,path:'/',maxAge:0});return r}

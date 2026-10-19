@@ -1,0 +1,1 @@
+import {redirect} from 'next/navigation';import {currentUser} from '@/lib/auth';import {Sidebar} from '@/components/Sidebar';export default function Layout({children}:{children:React.ReactNode}){if(!currentUser())redirect('/login');return <div className="lg:flex"><Sidebar/><main className="min-w-0 flex-1 p-6 lg:p-10">{children}</main></div>}

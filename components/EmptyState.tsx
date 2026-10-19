@@ -1,0 +1,2 @@
+import {FolderPlus} from 'lucide-react';
+export function EmptyState(){return <div className="card py-14 text-center"><FolderPlus className="mx-auto mb-4 text-brand" size={36}/><h3 className="text-lg font-bold">No diagnoses yet</h3><p className="mx-auto mt-2 max-w-md text-slate-500">Create a project and securely attach your first interface screenshot.</p><a className="btn mt-6" href="/dashboard/new">Start a diagnosis</a></div>}

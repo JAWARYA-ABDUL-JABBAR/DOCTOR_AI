@@ -1,0 +1,1 @@
+import {NewProjectForm} from '@/components/NewProjectForm';export default function Page(){return <><p className="text-sm font-semibold text-brand">NEW DIAGNOSIS</p><h1 className="mb-7 mt-2 text-3xl font-bold">Start with a screenshot</h1><NewProjectForm/></>}
